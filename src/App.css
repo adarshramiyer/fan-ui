@@ -42,6 +42,33 @@
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.App-button {
+  margin-left: 25px;
+  margin-bottom: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #94eb5b;
+  color: #141414;
+  font-size: 25px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.App-checkbox {
+  width: 20px;
+  height: 20px;
+  background-color: #141414;
+  border-color:#94eb5b;
+  color:#94eb5b;
+}
+
+.header {
+  left: 0;
+  top: 0;
+  position: sticky;
+  margin-bottom: 30px;
+}
 
 body {
   margin: 0;

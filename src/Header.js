@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar } from 'react-bootstrap';
+import "./App.css";
 
 {
   var LIGHTGREEN = '#94eb5b';
@@ -33,7 +34,7 @@ const navbarTextStyle = {
 
 const Header = (props) => {
     return (
-      <Navbar style={navbarStyle}>
+      <Navbar style={navbarStyle} className="header">
         <Navbar.Brand style={navbarTitleStyle} href="/">
           {props.title}
         </Navbar.Brand>

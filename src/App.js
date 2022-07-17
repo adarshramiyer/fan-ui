@@ -38,14 +38,21 @@ function App() {
   const [inputs, setInputs] = useState("");
 
   const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
+    var name = event.target.name;
+    var value = event.target.value;
     setInputs(values => ({...values, [name]: value}))
   }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert({inputs})
+    //alert({inputs});
+    const element = document.createElement("a");
+    const file = new Blob([JSON.stringify(inputs)], {type: 'application/json'});
+    element.href = URL.createObjectURL(file);
+    element.download = "Fan_Input.json";
+    document.body.appendChild(element);
+    element.click();
+    return ({inputs});
   }
 
   return (
@@ -102,24 +109,17 @@ function App() {
         <br />
 
         <label style={labelStyle}>Airflow Direction:</label>
-        <input
-          id="backToFront"
-          className="App-checkbox"
-          type="checkbox"
-          name="backToFront"
-          value={inputs.backToFront || ""}
+        <select
+          className="App-dropdown"
+          id = "airFlowDir"
+          name="airFlowDir"
+          value={inputs.airFlowDir || ""}
           onChange={handleChange}
-        />
-        <label style={checkLabelStyle}>Back to Front</label>
-        <input
-          id="frontToBack"
-          className="App-checkbox"
-          type="checkbox"
-          name="frontToBack"
-          value={inputs.frontToBack || ""}
-          onChange={handleChange}
-        />
-        <label style={checkLabelStyle}>Front to Back</label>
+        >
+          <option value="frontToBack">Front to Back</option>
+          <option value="backToFront">Back to Front</option>
+          <option value="biDirectional">Bi-directional</option>
+        </select>
 
         <br />
 
@@ -305,8 +305,8 @@ function App() {
           value={inputs.coolingType || ""}
           onChange={handleChange}
         >
-          <option value="Choice 1">Waterfall</option>
-          <option value="Choice 2">Granular</option>
+          <option value="waterfall">Waterfall</option>
+          <option value="granular">Granular</option>
         </select>
 
         <br />

@@ -47,7 +47,7 @@
   background-color: #141414;
   border-color: #94eb5b;
   font-family: Teko;
-  margin-top: 1.5vh
+  margin-top: 1vh
 }
 
 .App-dropdown {
@@ -70,7 +70,37 @@
   font-size: 25px;
   font-family: Teko;
   border-radius: 5px;
+  border-color: transparent;
+}
 
+.App-button:hover {
+  margin-left: 25px;
+  margin-bottom: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #76cd3d;
+  color: #141414;
+  border-color:transparent;
+  font-size: 25px;
+  font-family: Teko;
+  border-radius: 5px;
+}
+
+.App-button:active {
+  margin-left: 25px;
+  margin-bottom: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #141414;
+  color: #94eb5b;
+  border-color: #94eb5b;
+  font-size: 25px;
+  font-family: Teko;
+  border-radius: 5px;
 }
 
 .App-checkbox {

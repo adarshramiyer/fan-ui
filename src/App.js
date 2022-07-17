@@ -15,8 +15,8 @@ const labelStyle = {
 }
 
 const hundredPercentStyle = {
-  paddingLeft: 10,
-  paddingRight: 25,
+  paddingLeft: 25,
+  paddingRight: 20,
   paddingTop: 100,
   paddingBottom: 100,
   color: '#cce6eb',

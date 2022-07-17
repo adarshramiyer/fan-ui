@@ -22,3 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 /src/Orbitron-VariableFont_wght.ttf
+/src/RussoOne-Regular.ttf
+/src/Teko-Light.ttf
+/src/Teko-Regular.ttf

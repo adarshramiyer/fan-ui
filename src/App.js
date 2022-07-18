@@ -46,7 +46,7 @@ function render() {
 function App() {
   const [inputs, setInputs] = useState("");
 
-  const [submitErr, setErrors] = useState("empty");
+  const [submitErr, setErrors] = useState("");
 
   const handleChange = (event) => {
     var name = event.target.name;

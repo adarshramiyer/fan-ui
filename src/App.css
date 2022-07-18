@@ -3,18 +3,13 @@
 }
 
 @font-face {
-  font-family: RussoOne;
-  src: url("./RussoOne-Regular.ttf");
+  font-family: Raleway;
+  src: url("./Raleway-Light.ttf");
 }
 
 @font-face {
-  font-family: Orbitron;
-  src: url("./Orbitron-VariableFont_wght.ttf");
-}
-
-@font-face {
-  font-family: Teko;
-  src: url("./Teko-Light.ttf");
+  font-family: Rubik;
+  src: url("./Rubik-Light.ttf");
 }
 
 .App-logo {
@@ -23,7 +18,7 @@
 }
 
 .App-background {
-  background-color: #141414;
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,80 +30,90 @@
 }
 
 .navbar {
-  box-shadow: 0px 5px 10px black;
-  font-family: Orbitron;
+  box-shadow: 0px 2px 5px #aaaaaa;
+  font-family: Rubik;
   font-size: 50px;
-  color: #94eb5b;
+  color: #049fd9;
 }
 
 .App-text-input {
-  color: #cce6eb;
-  font-size: 25px;
-  background-color: #141414;
-  border-color: #94eb5b;
-  font-family: Teko;
-  margin-top: 1vh
+  color: #282828;
+  font-size: 20px;
+  background-color: #ffffff;
+  border-color: #049fd9;
+  border-radius: 20px;
+  font-family: Raleway;
+  margin-top: 20px;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
 }
 
 .App-dropdown {
-  color: #cce6eb;
+  color: #282828;
   font-size: 25px;
-  background-color: #141414;
-  border-color: #94eb5b;
-  font-family:Teko;
+  background-color: #ffffff;
+  border-color: #049fd9;
+  border-radius: 20px;
+  border-width: 2px;
+  font-family:Raleway;
+  padding: 5px;
 }
 
 .App-button {
   margin-left: 25px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 50px;
   padding-right: 50px;
-  background-color: #94eb5b;
-  color: #141414;
+  background-color: #049fd9;
+  color: #282828;
   font-size: 25px;
-  font-family: Teko;
-  border-radius: 5px;
+  font-family: Raleway;
+  border-radius: 40px;
   border-color: transparent;
+  margin-top: 20px;
 }
 
 .App-button:hover {
   margin-left: 25px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 50px;
   padding-right: 50px;
-  background-color: #76cd3d;
-  color: #141414;
+  background-color: #0485b5;
+  color: #282828;
   border-color:transparent;
   font-size: 25px;
-  font-family: Teko;
-  border-radius: 5px;
+  font-family: Raleway;
+  border-radius: 40px;
 }
 
 .App-button:active {
   margin-left: 25px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 50px;
   padding-right: 50px;
-  background-color: #141414;
-  color: #94eb5b;
-  border-color: #94eb5b;
+  background-color: #ffffff;
+  color: #049fd9;
+  border-color: #049fd9;
+  border-width: 2px;
   font-size: 25px;
-  font-family: Teko;
-  border-radius: 5px;
+  font-family: Raleway;
+  border-radius: 40px;
 }
 
 .App-checkbox {
   width: 20px;
   height: 20px;
   background-color: #141414;
-  border-color:#94eb5b;
-  color:#94eb5b;
+  border-color:#049fd9;
+  color:#049fd9;
 }
 
 .header {
@@ -116,14 +121,16 @@
   top: 0;
   position: sticky;
   margin-bottom: 30px;
+  align-items: center;
+  justify-content:stretch;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family:Teko;
+  font-family:Raleway;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-  color: #94eb5b;
+  color: #282828;
 }

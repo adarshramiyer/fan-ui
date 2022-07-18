@@ -118,7 +118,7 @@ function App() {
         validEntry = false;
       }
       if ((parseInt(inputs["thirtyPercentRPM"])) < 0) {
-        errorString += "20% RPM must be positive. \n";
+        errorString += "30% RPM must be positive. \n";
         validEntry = false;
       }
       if ((parseInt(inputs["fortyPercentRPM"])) < 0) {
@@ -198,13 +198,6 @@ function App() {
       }
   
     }
-
-    
-    
-    
-
-
-
 
     setErrors(errorString);
 

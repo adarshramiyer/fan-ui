@@ -46,7 +46,7 @@ function render() {
 function App() {
   const [inputs, setInputs] = useState("");
 
-  const [errors, setErrors] = useState("");
+  const [submitErr, setErrors] = useState("empty");
 
   const handleChange = (event) => {
     var name = event.target.name;
@@ -56,22 +56,157 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    //errors = ""
-    setErrors(errors + "");
-    console.log(errors);
+    //setErrors(errors + "");
+    //console.log(errors);
 
     var validEntry = true;
+    var errorString = "";
 
-    if (inputs.length <= 21) {
-      setErrors(errors + "You have not filled in all fields. ");
-      console.log(errors);
-      validEntry = false;
+    var hasEmptyField = (
+      inputs["numFanTrays"] == null || inputs["numFansPerTray"] == null || inputs["numRemovedTrays"] == null
+      || inputs["numHZones"] == null || inputs["numVZones"] == null || inputs["airFlowDir"] == null 
+      || inputs["lifetime"] == null || inputs["lowTemp"] == null || inputs["highTemp"] == null
+      || inputs["ambientTemp"] == null || inputs["tenPercentRPM"] == null || inputs["twentyPercentRPM"] == null
+      || inputs["thirtyPercentRPM"] == null || inputs["fortyPercentRPM"] == null || inputs["fiftyPercentRPM"] == null
+      || inputs["sixtyPercentRPM"] == null || inputs["seventyPercentRPM"] == null || inputs["eightyPercentRPM"] == null
+      || inputs["ninetyPercentRPM"] == null || inputs["hundredPercentRPM"] == null || inputs["coolingType"] == null
+      || inputs["maxPower"] == null
+      )
+
+    if (hasEmptyField == true)
+      {
+        errorString += "You must fill all fields \n";
+        validEntry = false;
+      }
+    else {
+      if (parseInt(inputs["numRemovedTrays"]) >= parseInt(inputs["numFanTrays"])) {
+        errorString += "Number of removed trays must be less than number of trays. \n";
+        validEntry = false;
+      }
+  
+      if ((parseInt(inputs["numFanTrays"])%parseInt(inputs["numVZones"])) != 0) {
+        errorString += "Number of vertical zones must be a divisor of number of trays. \n";
+        validEntry = false;
+      }
+  
+      if ((parseInt(inputs["numFansPerTray"])%parseInt(inputs["numHZones"])) != 0) {
+        errorString += "Number of horizontal zones must be a divisor of fans per tray. \n";
+        validEntry = false;
+      }
+      
+      if (inputs["airFlowDir"] == "") {
+        errorString += "Must choose an airflow direction. \n";
+        validEntry = false;
+      }
+  
+      if (parseInt(inputs["lifetime"]) <= 0) {
+        errorString += "Desired Lifetime must be positive. \n";
+        validEntry = false;
+      }
+  
+      if (parseInt(inputs["lowTemp"]) > parseInt(inputs["highTemp"])) {
+        errorString += "Maximum Temperature must be greater than Minimum Temperature. \n";
+        validEntry = false;
+      }
+  
+      if ((parseInt(inputs["tenPercentRPM"])) < 0) {
+        errorString += "10% RPM must be positive. \n";
+        validEntry = false;
+      }
+      if ((parseInt(inputs["twentyPercentRPM"])) < 0) {
+        errorString += "20% RPM must be positive. \n";
+        validEntry = false;
+      }
+      if ((parseInt(inputs["thirtyPercentRPM"])) < 0) {
+        errorString += "20% RPM must be positive. \n";
+        validEntry = false;
+      }
+      if ((parseInt(inputs["fortyPercentRPM"])) < 0) {
+        errorString += "40% RPM must be positive. \n";
+        validEntry = false;
+      }
+      if ((parseInt(inputs["fiftyPercentRPM"])) < 0) {
+        errorString += "50% RPM must be positive. \n";
+        validEntry = false;
+      }
+      if ((parseInt(inputs["sixtyPercentRPM"])) < 0) {
+        errorString += "60% RPM must be positive. \n";
+        validEntry = false;
+      }
+      if ((parseInt(inputs["seventyPercentRPM"])) < 0) {
+        errorString += "70% RPM must be positive. \n";
+        validEntry = false;
+      }
+      if ((parseInt(inputs["eightyPercentRPM"])) < 0) {
+        errorString += "80% RPM must be positive. \n";
+        validEntry = false;
+      }
+      if ((parseInt(inputs["ninetyPercentRPM"])) < 0) {
+        errorString += "90% RPM must be positive. \n";
+        validEntry = false;
+      }
+      if ((parseInt(inputs["hundredPercentRPM"])) < 0) {
+        errorString += "100% RPM must be positive. \n";
+        validEntry = false;
+      }
+  
+      if ((parseInt(inputs["twentyPercentRPM"])) < (parseInt(inputs["tenPercentRPM"]))) {
+        errorString += "20% RPM must be greater than 10% RPM. \n";
+        validEntry = false;
+      }
+      if ((parseInt(inputs["thirtyPercentRPM"])) < (parseInt(inputs["twentyPercentRPM"]))) {
+        errorString += "30% RPM must be greater than 20% RPM. \n";
+        validEntry = false;
+      }
+      if ((parseInt(inputs["fortyPercentRPM"])) < (parseInt(inputs["thirtyPercentRPM"]))) {
+        errorString += "40% RPM must be greater than 30% RPM. \n";
+        validEntry = false;
+      }
+      if ((parseInt(inputs["fiftyPercentRPM"])) < (parseInt(inputs["fortyPercentRPM"]))) {
+        errorString += "50% RPM must be greater than 40% RPM. \n";
+        validEntry = false;
+      }
+      if ((parseInt(inputs["sixtyPercentRPM"])) < (parseInt(inputs["fiftyPercentRPM"]))) {
+        errorString += "60% RPM must be greater than 50% RPM. \n";
+        validEntry = false;
+      }
+      if ((parseInt(inputs["seventyPercentRPM"])) < (parseInt(inputs["sixtyPercentRPM"]))) {
+        errorString += "70% RPM must be greater than 60% RPM. \n";
+        validEntry = false;
+      }
+      if ((parseInt(inputs["eightyPercentRPM"])) < (parseInt(inputs["seventyPercentRPM"]))) {
+        errorString += "80% RPM must be greater than 70% RPM. \n";
+        validEntry = false;
+      }
+      if ((parseInt(inputs["ninetyPercentRPM"])) < (parseInt(inputs["eightyPercentRPM"]))) {
+        errorString += "90% RPM must be greater than 80% RPM. \n";
+        validEntry = false;
+      }
+      if ((parseInt(inputs["hundredPercentRPM"])) < (parseInt(inputs["ninetyPercentRPM"]))) {
+        errorString += "100% RPM must be greater than 90% RPM. \n";
+        validEntry = false;
+      }
+  
+      if (inputs["coolingType"] == "") {
+        errorString += "Must choose a cooling type. \n";
+        validEntry = false;
+      }
+  
+      if (parseInt(inputs["maxPower"]) < 0) {
+        errorString += "Maximum Power must be positive. \n";
+        validEntry = false;
+      }
+  
     }
 
-    //setErrors(errors + "test error ");
-    console.log(errors);
+    
+    
+    
 
-    //setErrors("This is an error");
+
+
+
+    setErrors(errorString);
 
     if (validEntry == true) {
       const element = document.createElement("a");
@@ -417,9 +552,9 @@ function App() {
         </table>
 
 
-        <input type="submit" className="App-button" />
+        <input id = "submitButton" type="submit" className="App-button" />
         <br/>
-        <label id = "ERRORS" style = {errorStyle}> {errors} </label>
+        <label id = "ERRORS" style = {errorStyle}> {submitErr} </label>
         <br/>
       </form>
     </background>
